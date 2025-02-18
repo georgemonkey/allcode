@@ -10,7 +10,7 @@ import warnings
 warnings.filterwarnings("ignore") 
 
 
-data=pd.read_csv("/Users/desktop/Library/Mobile Documents/com~apple~CloudDocs/Code/CodeMedia/DataSets/washington-history.csv")
+data=pd.read_csv('/Users/parthamradkar/Library/Mobile Documents/com~apple~CloudDocs/Code/AllCode/CodeMedia/DataSets/washington-history.csv')
 
 print(data.info())
 

@@ -7,7 +7,7 @@ import sklearn.model_selection as ms
 import warnings
 warnings.filterwarnings("ignore")
 
-data=pd.read_csv("'/Users/parthamradkar/Library/Mobile Documents/com~apple~CloudDocs/Code/AllCode/CodeMedia/DataSets/national-history.csv'")
+data=pd.read_csv('/Users/parthamradkar/Library/Mobile Documents/com~apple~CloudDocs/Code/AllCode/CodeMedia/DataSets/national-history.csv')
 
 print(data.info())
 
