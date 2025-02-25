@@ -28,26 +28,21 @@ cselector.title("Selector")
 cselector.geometry("250x500")
 
 num = 0 #replace with screen
+list2 = []
+def f1():
+    list2.append(listbox.get(tk.ANCHOR))
+    print(list2)
 
 L1 = tk.Label(cselector, text="selection")
 L1.place(x= 250, y= 1000)
 list1 = []
-def f1():
-    if name.get() == 1:
-        list1.append(1)
-    else:
-        pass
-    #print(list1)
-#checkbtn1 = IntVar()
-for abc2 in data.columns:
-    global name
-    
-    name = IntVar()
-    num = num + 20
-    abc1 =tk.Checkbutton(cselector, text=abc2, variable = name, onvalue=1, offvalue=0, command=f1)
-    abc1.place(x=0,y=num)
-#print(list1)
-print(name.get())
+listbox = tk.Listbox(cselector)
+col = data.columns
+for i in range(len(col)):
+    listbox.insert(i, col[i])
+listbox.place(x=0, y=0)
+b1 = tk.Button(cselector,text="Add",command=f1)
+b1.place(x=185, y=0)
 cselector.mainloop()
 
 cols = tuple(data.columns)
