@@ -1,3 +1,7 @@
+#button for generating complete info of data
+#generate min, max, mean, mode, deviation or all columns
+#should work with only selected columns or entire dataset
+
 import pandas as pd
 import numpy as np
 import tkinter as tk
@@ -25,7 +29,7 @@ fileopen()
 
 cselector = tk.Tk()
 cselector.title("Selector")
-cselector.geometry("250x500")
+cselector.geometry("500x1000")
 
 num = 0 #replace with screen
 list2 = []
@@ -34,6 +38,7 @@ def f1():
     print(list2)
     
 def f2():
+    global data1
     win1 = tk.Tk()
     data1=data[list2]
     #print(data1)
@@ -53,7 +58,21 @@ def f2():
         listbox.insert("","end",values=cols)
     win1.mainloop()
 
-
+def f3():
+    L2 = tk.Label(cselector,text='MININUMS: '+str(data.min()))
+    L2.place(x=10, y= 250)
+    L3 = tk.Label(cselector, text='MAXIMUMS:  '+ str(data.max()))
+    L3.place(x=230,y=250)
+    print(data.std())
+    #L4 = tk.Label(cselector, text='MAXIMUMS:  '+ str(data.mean()))
+    #L4.place(x=10,y=500)
+def f4():
+    data1=data[list2]
+    L2 = tk.Label(cselector,text='MININUMS: '+str(data1.min()))
+    L2.place(x=10, y= 250)
+    L3 = tk.Label(cselector, text='MAXIMUMS:  '+ str(data1.max()))
+    L3.place(x=230,y=250)
+    print(data1.std())
 L1 = tk.Label(cselector, text="selection")
 L1.place(x= 250, y= 1000)
 list1 = []
@@ -62,10 +81,14 @@ col = data.columns
 for i in range(len(col)):
     listbox.insert(i, col[i])
 listbox.place(x=0, y=0)
-b1 = tk.Button(cselector,text="Add",command=f1)
+b1 = tk.Button(cselector,text="Add Column",command=f1)
 b1.place(x=185, y=0)
-b2 = tk.Button(cselector,text='Submit',command=f2)
+b2 = tk.Button(cselector,text='Display Selected Columns',command=f2)
 b2.place(x=185,y=40)
+b3 = tk.Button(cselector, text = 'Display Complete Data Info', command = f3)
+b3.place(x=185,y=80)
+b4 = tk.Button(cselector, text = 'Display Selected Data Info', command = f4)
+b4.place(x=185,y=120)
 cselector.mainloop()
 
 cols = tuple(data.columns)
