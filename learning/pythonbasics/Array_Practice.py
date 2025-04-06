@@ -1,7 +1,7 @@
 import array as ar
 
 array1 = ar.array("i", [10, 20, 30, 44])
-
+print("test")
 print(array1)
 print(array1[0])
 print("BREAK POINT")
