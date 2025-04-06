@@ -1,0 +1,238 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "swingpracticejava",
+            "request": "launch",
+            "mainClass": "JavaPractice.swingpracticejava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "swingmcqfunctionjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.swingmcqfunctionjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "swingmcqjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.swingmcqjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "constructorpracticejava",
+            "request": "launch",
+            "mainClass": "JavaPractice.constructorpracticejava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "primenumberfunctionjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.primenumberfunctionjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "functionjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.functionjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "continuepracticejava",
+            "request": "launch",
+            "mainClass": "JavaPractice.continuepracticejava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "dowhilepracticejava",
+            "request": "launch",
+            "mainClass": "JavaPractice.dowhilepracticejava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "primenumberjavanested",
+            "request": "launch",
+            "mainClass": "JavaPractice.primenumberjavanested",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "whileloopprimenumbernestedjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.whileloopprimenumbernestedjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "whileloopprinenumberjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.whileloopprinenumberjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "timetablewhileloopjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.timetablewhileloopjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "whilelooppracticejava",
+            "request": "launch",
+            "mainClass": "JavaPractice.whilelooppracticejava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "primenumberjavans",
+            "request": "launch",
+            "mainClass": "JavaPractice.primenumberjavans",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "primenumberjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.primenumberjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "forloopjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.forloopjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "switchcalculatorjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.switchcalculatorjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "switchpracticejava",
+            "request": "launch",
+            "mainClass": "JavaPractice.switchpracticejava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "calculatorjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.calculatorjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "trafficsignal",
+            "request": "launch",
+            "mainClass": "JavaPractice.trafficsignal",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "oddevenjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.oddevenjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "ifelsejava",
+            "request": "launch",
+            "mainClass": "JavaPractice.ifelsejava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "operatorjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.operatorjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "charinputscannerjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.charinputscannerjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "stringinputscannerjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.stringinputscannerjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "doubleinputscannerjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.doubleinputscannerjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "floatinputscannerjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.floatinputscannerjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "inputorscannerjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.inputorscannerjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "stringmethodsjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.stringmethodsjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "multiplicationjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.multiplicationjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "divisionjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.divisionjava",
+            "projectName": "Code_83762371"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "introductionjava",
+            "request": "launch",
+            "mainClass": "JavaPractice.introductionjava",
+            "projectName": "Code_83762371"
+        }
+    ]
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige 42842A VEX V5</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #201E20;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            position: relative; /* Added for snack bar positioning */
+        }
+        
+        .menubar {
+            background: transparent;
+            text-align: center;
+            font-size: 24px;
+            position: relative; /* Added for snack bar positioning */
+            z-index: 2; /* Ensure menu bar stays above snack bar */
+        }
+        
+        .menubar ul {
+            border-radius: 200px;
+            display: inline-flex;
+            list-style: none;
+        }
+        
+        .menubar ul li {
+            width: 225px;
+            margin: 10px;
+            padding: 5px;
+        }
+        
+        .menubar ul li a {
+            text-decoration: none;
+            color: #E3E4E6;
+        }
+        
+        .menubar ul li:hover {
+            border-radius: 10px;
+            background: #CCAC00;
+            padding: 5px;
+        }
+        
+        #m1 {
+            color: #E3E4E6;
+            font-size: 24px;
+            line-height: 1.8;
+        }
+        
+        .announcements {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #333;
+            color: #E3E4E6;
+            border-radius: 10px;
+        }
+        
+        .announcements h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .announcements p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Snack Bar Styles */
+        .snackbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1; /* Ensure snack bar stays above content */
+            display: none; /* Hidden by default */
+        }
+
+        /* Show animation */
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Snack Bar -->
+    <div id="snackbar" class="snackbar">Message Sent Successfully</div>
+
+    <a href="home.html" style="top:40px; left: 80px; position:fixed"><img src="/Users/parthamradkar/Library/Mobile Documents/com~apple~CloudDocs/Code/AllCode/CodeMedia/Images/logo1.png" width="100" height="90" ></a>
+    <div class="menubar">
+        <ul style="top:30px; left: 520px; position:fixed">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="info.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <p style="top:300px; left: 470px; position:fixed" id="m1">The team Prestige is based in Sammamish, Washington. The team <br> consists of seven experienced members. All members are <br> ninth graders from four different high schools.</p>
+    <div class="announcements">
+        <h2>Announcements</h2>
+        <p>Stay tuned for updates on upcoming competitions and events!</p>
+    </div>
+
+    <script>
+        // Show snack bar
+        function showSnackbar() {
+            var snackbar = document.getElementById("snackbar");
+            snackbar.className = "snackbar show";
+            setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000); // After 3 seconds, remove the show class to hide the snack bar
+        }
+    </script>
+</body>
+</html>

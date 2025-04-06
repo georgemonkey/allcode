@@ -1,0 +1,1 @@
+#USE data path "/Users/parthamradkar/Library/Mobile Documents/com~apple~CloudDocs/Code/CodeMedia/DataSets/weather.csv"
