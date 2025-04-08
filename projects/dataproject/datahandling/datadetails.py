@@ -59,36 +59,34 @@ def f2():
     win1.mainloop()
 
 def f3():
-    try:
-        clear()
-        L2.configure(text=str(data.describe()))
-        #L2.place(x=10, y= 250)
 
-        L3.configure(text=str(data.info))
-        #L3.place(x=230,y=250)
-        print(data.std())
-        #L4 = tk.Label(cselector, text='MAXIMUMS:  '+ str(data.mean()))
-        #L4.place(x=10,y=500)
-    except:
-        pass
+    clear()
+    #l2.configure(text=str(data.describe()))
+    #l2.place(x=10, y= 250)
+
+    la.config(text=str(data.info()))
+    
+    #la.place(x=230,y=250)
+    #print(data.std())
+    #L4 = tk.Label(cselector, text='MAXIMUMS:  '+ str(data.mean()))
+    #L4.place(x=10,y=500)
+
 def f4():
     try:
         clear()
         selected_data=data[list2]
-        L2.configure(text=str(selected_data.describe()))
-        #L2.place(x=10, y= 250)
+        l2.configure(text=str(selected_data.describe()))
+        #l2.place(x=10, y= 250)
         
-        L3.configure(text= str(selected_data.info))
-        #L3.place(x=230,y=250)
-        print(selected_data.std())
+        la.configure(text= selected_data.info())
+        #la.place(x=230,y=250)
+        #print(selected_data.std())
     except:
         pass
 
 def clear():
-    L2.configure(text=' ')
-    L3.configure(text=' ')
-L1 = tk.Label(cselector, text="selection")
-L1.place(x= 250, y= 1000)
+    l2.configure(text=' ')
+    la.configure(text=' ')
 list1 = []
 listbox = tk.Listbox(cselector)
 col = data.columns
@@ -96,10 +94,10 @@ for i in range(len(col)):
     listbox.insert(i, col[i])
 listbox.place(x=0, y=0)
 
-L2 = tk.Label(cselector,text='')
-L2.place(x=10, y= 250)
-L3 = tk.Label(cselector,text='')
-L3.place(x=230,y=250)
+l2 = tk.Label(cselector,text='')
+l2.place(x=10, y= 250)
+la = tk.Label(cselector,text='')
+la.place(x=5,y=250)
 
 b1 = tk.Button(cselector,text="Add Column",command=f1)
 b1.place(x=185, y=0)
