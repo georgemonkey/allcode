@@ -29,18 +29,24 @@ fileopen()
 
 cselector = tk.Tk()
 cselector.title("Selector")
-cselector.geometry("500x1000")
+cselector.geometry("600x1000")
 
 num = 0 #replace with screen
-list2 = []
-def f1():
-    list2.append(listbox.get(tk.ANCHOR))
-    print(list2)
+selecteddata = []
+def append_column():
+    global textdata
+    textdata = '0'
+    selecteddata.append(listbox.get(tk.ANCHOR))
+    display_selected_list()
+def display_selected_list():
+    for i in range(len(selecteddata)):
+        textdata = textdata + selecteddata[i]
+        selected_display.configure(text = textdata )
     
-def f2():
+def data_display():
     global selected_data
     win1 = tk.Tk()
-    selected_data=data[list2]
+    selected_data=data[selecteddata]
     #print(selected_data)
     cols= tuple(selected_data.columns)
     print(cols)
@@ -57,36 +63,18 @@ def f2():
     for row,cols in enumerate(data.values, start= 0):
         listbox.insert("","end",values=cols)
     win1.mainloop()
-
-def f3():
-
+def complete_data_display():
     clear()
-    #l2.configure(text=str(data.describe()))
-    #l2.place(x=10, y= 250)
-
-    la.config(text=str(data.info()))
-    
-    #la.place(x=230,y=250)
-    #print(data.std())
-    #L4 = tk.Label(cselector, text='MAXIMUMS:  '+ str(data.mean()))
-    #L4.place(x=10,y=500)
-
-def f4():
-    try:
-        clear()
-        selected_data=data[list2]
-        l2.configure(text=str(selected_data.describe()))
-        #l2.place(x=10, y= 250)
-        
-        la.configure(text= selected_data.info())
-        #la.place(x=230,y=250)
-        #print(selected_data.std())
-    except:
-        pass
-
+    completedatainfo = 'INDEX: '+str(data.index)+'\n'+'COUNT: '+str(data.count())+ '\n'+'DATA TYPES: '+str(data.dtypes)
+    leftinfo.config(text=completedatainfo)
+def display_selected_data():
+    clear()
+    selected_data=data[selecteddata]
+    selected_datainfo = 'INDEX: '+str(selected_data.index)+'\n'+'COUNT: '+str(selected_data.count())+ '\n'+'DATA TYPES: '+str(selected_data.dtypes)
+    leftinfo.config(text=selected_datainfo)
 def clear():
-    l2.configure(text=' ')
-    la.configure(text=' ')
+    rightinfo.configure(text=' ')
+    leftinfo.configure(text=' ')
 list1 = []
 listbox = tk.Listbox(cselector)
 col = data.columns
@@ -94,18 +82,20 @@ for i in range(len(col)):
     listbox.insert(i, col[i])
 listbox.place(x=0, y=0)
 
-l2 = tk.Label(cselector,text='')
-l2.place(x=10, y= 250)
-la = tk.Label(cselector,text='')
-la.place(x=5,y=250)
+rightinfo = tk.Label(cselector,text='')
+rightinfo.place(x=10, y= 250)
+leftinfo = tk.Label(cselector,text='')
+leftinfo.place(x=5,y=250)
+selected_display = tk.Label(cselector,text='')
+selected_display.place(x=400,y=15)
 
-b1 = tk.Button(cselector,text="Add Column",command=f1)
+b1 = tk.Button(cselector,text="Add Column",command=append_column)
 b1.place(x=185, y=0)
-b2 = tk.Button(cselector,text='Display Selected Columns',command=f2)
+b2 = tk.Button(cselector,text='Display Selected Columns',command=data_display)
 b2.place(x=185,y=40)
-b3 = tk.Button(cselector, text = 'Display Complete Data Info', command = f3)
+b3 = tk.Button(cselector, text = 'Display Complete Data Info', command = complete_data_display)
 b3.place(x=185,y=80)
-b4 = tk.Button(cselector, text = 'Display Selected Data Info', command = f4)
+b4 = tk.Button(cselector, text = 'Display Selected Data Info', command = display_selected_data)
 b4.place(x=185,y=120)
 b5 = tk.Button(cselector, text='Clear Info',command=clear)
 b5.place(x=185,y=160)
