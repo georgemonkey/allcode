@@ -8,12 +8,12 @@ import seaborn as sns
 from pandas.plotting import scatter_matrix
 
 #PIE CHART
-"""
+
 data = pd.DataFrame({"mass": [0.5, 5, 6], "radius": [2450, 6050, 6380]}, index=["mercury", "venus", "earth" ])
 print(data)
 data.plot(kind = "pie", y = "radius", autopct = "%.2f")
 plt.show()
-"""
+
 
 #SCATTER PLOT
 """

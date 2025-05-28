@@ -30,7 +30,7 @@ fileopen()
 
 root = tk.Tk()
 root.title("Selector")
-root.geometry("620x1000")
+root.geometry("650x1000")
 
 num = 0 #replace with screen
 selecteddata = []
@@ -111,13 +111,23 @@ def opengraphpanel():
     else:
         graphpanel = tk.Tk()
         graphpanel.title('Graphing Panel')
-        graphpanel.geometry('400x400')
+        graphpanel.geometry('450x400')
         warning1 = tk.Label(graphpanel,text='GRAPHS FROM SELECTED COLUMNS',font = ('Helvetica',18 ))
         warning1.place(x=30, y = 15)
         selected_dataLISTFORM=data[selecteddata]
         print('selected list converted')
+        selected_x = tk.StringVar()
+        x_selector = ttk.Combobox(graphpanel,textvariable=selected_x,values=data,state='readonly')
+        x_selector.place(x=4,y=300)
+        x_selector.set('Select X-Value')
+
+        selected_y = tk.StringVar()
+        y_selector = ttk.Combobox(graphpanel,textvariable=selected_y,values=data,state='readonly')
+        y_selector.place(x=220,y=300)
+        y_selector.set('Select Y-Value')
+
         def linegraph():
-            selected_dataLISTFORM.plot(kind = 'line')
+            selected_dataLISTFORM.plot(kind='line')
             plt.show()
         def bargraph():
             selected_dataLISTFORM.plot(kind="bar")
@@ -128,6 +138,7 @@ def opengraphpanel():
         def histkde():
             scatter_matrix(selected_dataLISTFORM, diagonal="hist")
             plt.show()
+    
         linegraph_button = tk.Button(graphpanel,text='Line Graph', command=linegraph,font = ('Helvetica',20 ),width=14)
         linegraph_button.place(x=4,y=50)
         bargraph_button = tk.Button(graphpanel,text='Bar Graph', command=bargraph,font = ('Helvetica',20 ),width=14)
@@ -138,9 +149,6 @@ def opengraphpanel():
         histkde_button.place(x=4,y=200)
         pie_button = tk.Button(graphpanel,text='Pie Graph', command=histkde,font = ('Helvetica',20 ),width=14)
         pie_button.place(x=4,y=250)
-        pie_option = tk.StringVar()
-        pie_option_menu = ttk.Combobox(graphpanel,textvariable=pie_option,values=selected_data,state='readonly')
-        pie_option_menu.place(x=200,y=250)
         graphpanel.mainloop()
 gc = tk.Button(text='get cords')
 root.bind("<Button-1>", getcords)
