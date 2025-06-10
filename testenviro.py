@@ -1,79 +1,35 @@
-numbers = [5, 12, 7, 3, 18]
+import numpy as np
+import matplotlib.pyplot as plt
 
-def printMenu():
-    print()
-    print("Choose an option:")
-    print("a - Add a number")
-    print("r - Remove a number")
-    print("p - Print the whole list")
-    print("i - Print an individual number")
-    print("1 - Print the sum of the list")
-    print("2 - Print all even numbers")
-    print("3 - Print numbers smaller than a given number")
-    print("4 - Print the average")
-    print("5 - Print the largest number")
-    print("6 - Print the number closest to a given number")
-    print("7 - Compare last number to average of the rest")
-    print("q - Quit")
-def closestTo(numbers, target):
-    closest = numbers[0]
-    minDiff = abs(target - closest)
-    for num in numbers:
-        if abs(num - target) < minDiff:
-            closest = num
-            minDiff = abs(num - target)
-    return closest
+# Define cam rotation angles (degrees)
+theta = np.linspace(0, 360, 361)
 
-while True:
-    printMenu()
-    choice = input("Enter your choice: ")
+# Create an idealized displacement model (can be replaced with actual cam profile data)
+# Example motion phases: rise (0–90), dwell (90–180), fall (180–270), dwell (270–360)
+displacement = []
 
-    if choice == 'a':
-        value = int(input("Enter number to add: "))
-        numbers.append(value)
-    elif choice == 'r':
-        value = int(input("Enter number to remove: "))
-        if value in numbers:
-            numbers.remove(value)
-        else:
-            print("That number is not in the list.")
-    elif choice == 'p':
-        print("The list is:", numbers)
-    elif choice == 'i':
-        index = int(input("Enter the index of the number: "))
-        if 0 <= index < len(numbers):
-            print("Number at index", index, "is", numbers[index])
-        else:
-            print("Invalid index.")
-    elif choice == '1':
-        print("Sum:", sum(numbers))
-    elif choice == '2':
-        print("Even numbers:", [n for n in numbers if n % 2 == 0])
-    elif choice == '3':
-        limit = int(input("Enter a number: "))
-        print("Numbers smaller than", limit, ":", [n for n in numbers if n < limit])
-    elif choice == '4':
-        average = sum(numbers) / len(numbers)
-        print("Average:", average)
-    elif choice == '5':
-        print("Largest number:", max(numbers))
-    elif choice == '6':
-        target = int(input("Enter a target number: "))
-        print("Closest number to", target, "is", closestTo(numbers, target))
-    elif choice == '7':
-        if len(numbers) < 2:
-            print("Not enough numbers to compare.")
-        else:
-            last = numbers[-1]
-            avgOfRest = sum(numbers[:-1]) / (len(numbers) - 1)
-            if last > avgOfRest:
-                print("The last number is bigger than the average of the others.")
-            elif last < avgOfRest:
-                print("The last number is smaller than the average of the others.")
-            else:
-                print("The last number is equal to the average of the others.")
-    elif choice == 'q':
-        print("Goodbye!")
-        break
+for angle in theta:
+    if 0 <= angle < 90:
+        # Rise: follower rises smoothly (parabolic)
+        h = 10 * (1 - np.cos(np.radians(angle))) / 2
+    elif 90 <= angle < 180:
+        # Dwell: constant height
+        h = 10
+    elif 180 <= angle < 270:
+        # Fall: follower returns
+        h = 10 * (1 + np.cos(np.radians(angle - 180))) / 2
     else:
-        print("Invalid choice. Try again.")
+        # Dwell: back to base
+        h = 0
+    displacement.append(h)
+
+# Plotting the displacement diagram
+plt.figure(figsize=(10, 5))
+plt.plot(theta, displacement, label='Follower Displacement', color='blue')
+plt.title("aashi cam follower graph")
+plt.xlabel("Cam Angle (degrees)")
+plt.ylabel("Follower Displacement (mm)")
+plt.grid(True)
+plt.legend()
+plt.tight_layout()
+plt.show()
